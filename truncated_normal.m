@@ -1,0 +1,7 @@
+function [ f_x ] = truncated_normal(m,sigma2,X)
+
+k=sqrt(pi*sigma2/2)*(1+erf(m/sqrt(2*sigma2)));
+f_x= (1/k)*exp(-(X-m).^2/(2*sigma2));
+f_x(find(X<0))=0;
+end
+
